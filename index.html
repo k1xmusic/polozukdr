@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 
 <meta charset="UTF-8">
@@ -32,21 +31,14 @@ overflow-x:hidden;
 .hero{
 
 height:100vh;
-
 display:flex;
-flex-direction:column;
-
 align-items:center;
 justify-content:center;
-
 text-align:center;
 
 background-image:url("background.jpg");
-
 background-size:cover;
-
 background-position:center;
-
 background-attachment:fixed;
 
 position:relative;
@@ -58,9 +50,7 @@ padding:20px;
 .hero::after{
 
 content:"";
-
 position:absolute;
-
 top:0;
 left:0;
 
@@ -68,93 +58,59 @@ width:100%;
 height:100%;
 
 background:linear-gradient(
-
 to bottom,
-
-rgba(0,0,0,0.4),
-
-rgba(0,0,0,0.9)
-
+rgba(0,0,0,0.3),
+rgba(0,0,0,0.85)
 );
 
 }
 
 .hero-content{
-
 position:relative;
-
 z-index:2;
-
 animation:fadeUp 1.5s ease;
-
 }
 
 h1{
-
 font-size:52px;
-
 margin-bottom:10px;
-
 }
 
 .subtitle{
-
 font-size:20px;
-
 opacity:0.9;
-
 }
 
 /* TIMER */
 
 .timer{
-
 margin-top:30px;
-
 display:flex;
-
 gap:20px;
-
 justify-content:center;
-
 flex-wrap:wrap;
-
 }
 
 .time-box{
-
 background:rgba(255,255,255,0.08);
-
 backdrop-filter:blur(10px);
-
 border-radius:30px;
-
 padding:15px 20px;
-
 border:1px solid rgba(255,255,255,0.2);
-
 }
 
 .time-box span{
-
 display:block;
-
 font-size:28px;
-
 font-weight:700;
-
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
-
 padding:90px 20px;
-
 display:flex;
-
 justify-content:center;
-
 }
 
 /* GLASS CARD */
@@ -162,9 +118,7 @@ justify-content:center;
 .glass{
 
 background:rgba(255,255,255,0.08);
-
 backdrop-filter:blur(12px);
-
 border-radius:40px;
 
 padding:40px;
@@ -204,9 +158,7 @@ transition:0.3s;
 }
 
 .route-btn:hover{
-
 transform:scale(1.07);
-
 }
 
 /* FAQ */
@@ -232,45 +184,29 @@ transition:0.3s;
 }
 
 .faq-item:hover{
-
 transform:scale(1.02);
-
 }
 
 .answer{
-
 max-height:0;
-
 overflow:hidden;
-
 transition:max-height 0.4s ease;
-
 }
 
 .answer p{
-
 margin-top:10px;
-
 }
 
 /* STARS */
 
 .stars{
-
 position:fixed;
-
 width:100%;
-
 height:100%;
-
 top:0;
-
 left:0;
-
 pointer-events:none;
-
 z-index:1;
-
 }
 
 .star{
@@ -278,7 +214,6 @@ z-index:1;
 position:absolute;
 
 width:3px;
-
 height:3px;
 
 background:white;
@@ -292,31 +227,23 @@ animation:twinkle 3s infinite;
 @keyframes twinkle{
 
 0%{opacity:0.2}
-
 50%{opacity:1}
-
 100%{opacity:0.2}
 
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 @keyframes fadeUp{
 
 from{
-
 opacity:0;
-
 transform:translateY(40px);
-
 }
 
 to{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 }
@@ -324,63 +251,68 @@ transform:translateY(0);
 /* SCROLL */
 
 .hidden{
-
 opacity:0;
-
 transform:translateY(40px);
-
 transition:1s;
-
 }
 
 .show{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 /* FOOTER */
 
 footer{
-
 text-align:center;
-
 padding:60px 20px;
-
 font-size:14px;
-
 opacity:0.7;
+}
+
+/* MOBILE PHOTO FIX */
+
+@media (max-width:700px){
+
+.hero{
+
+background-image:
+linear-gradient(
+to bottom,
+rgba(0,0,0,0) 40%,
+rgba(0,0,0,0.8) 75%,
+black 100%
+),
+url("background.jpg");
+
+background-position:center top;
+
+background-size:100% auto;
+
+background-repeat:no-repeat;
+
+background-attachment:scroll;
 
 }
 
-/* MOBILE */
-
-@media(max-width:700px){
+.hero-content{
+margin-top:220px;
+}
 
 h1{
-
 font-size:34px;
-
 }
 
 .subtitle{
-
 font-size:16px;
-
 }
 
 .timer{
-
 gap:10px;
-
 }
 
 .glass{
-
 padding:30px;
-
 }
 
 }
@@ -408,35 +340,23 @@ padding:30px;
 <div class="timer">
 
 <div class="time-box">
-
 <span id="days">0</span>
-
 дней
-
 </div>
 
 <div class="time-box">
-
 <span id="hours">0</span>
-
 часов
-
 </div>
 
 <div class="time-box">
-
 <span id="minutes">0</span>
-
 мин
-
 </div>
 
 <div class="time-box">
-
 <span id="seconds">0</span>
-
 сек
-
 </div>
 
 </div>
@@ -458,9 +378,7 @@ padding:30px;
 <p><b>Место:</b> СНТ Янтарь, ул. Сливовая 568</p>
 
 <a class="route-btn"
-
 href="https://yandex.ru/maps/?text=СНТ Янтарь Сливовая 568"
-
 target="_blank">
 
 Построить маршрут
@@ -478,67 +396,31 @@ target="_blank">
 <h2>Частые вопросы</h2>
 
 <div class="faq-item">
-
 <div class="question">Дресс-код</div>
-
 <div class="answer">
-
-<p>
-
-Черно-белая одежда (не обязательно деловой стиль — на ваш выбор)
-
-</p>
-
+<p>Черно-белая одежда (не обязательно деловой стиль)</p>
 </div>
-
 </div>
 
 <div class="faq-item">
-
 <div class="question">Купальники</div>
-
 <div class="answer">
-
-<p>
-
-Можно любой цвет
-
-</p>
-
+<p>Можно любой цвет</p>
 </div>
-
 </div>
 
 <div class="faq-item">
-
 <div class="question">Можно ли остаться с ночёвкой?</div>
-
 <div class="answer">
-
-<p>
-
-Да
-
-</p>
-
+<p>Да</p>
 </div>
-
 </div>
 
 <div class="faq-item">
-
 <div class="question">Брать тапочки и полотенце?</div>
-
 <div class="answer">
-
-<p>
-
-Да
-
-</p>
-
+<p>Да</p>
 </div>
-
 </div>
 
 </div>
@@ -546,9 +428,7 @@ target="_blank">
 </section>
 
 <footer>
-
 Ждём тебя на празднике 🎉
-
 </footer>
 
 <script>
@@ -558,13 +438,9 @@ target="_blank">
 window.onload=()=>{
 
 confetti({
-
 particleCount:200,
-
 spread:120,
-
 origin:{y:0.6}
-
 })
 
 }
@@ -580,11 +456,8 @@ const now=new Date().getTime()
 const dist=target-now
 
 const d=Math.floor(dist/(1000*60*60*24))
-
 const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60))
-
 const m=Math.floor((dist%(1000*60*60))/(1000*60))
-
 const s=Math.floor((dist%(1000*60))/1000)
 
 days.innerHTML=d
@@ -603,13 +476,9 @@ item.addEventListener("click",()=>{
 const ans=item.querySelector(".answer")
 
 if(ans.style.maxHeight){
-
 ans.style.maxHeight=null
-
 }else{
-
 ans.style.maxHeight=ans.scrollHeight+"px"
-
 }
 
 })
@@ -627,9 +496,7 @@ let star=document.createElement("div")
 star.classList.add("star")
 
 star.style.top=Math.random()*100+"%"
-
 star.style.left=Math.random()*100+"%"
-
 star.style.animationDuration=(Math.random()*3+2)+"s"
 
 stars.appendChild(star)
@@ -643,9 +510,7 @@ const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
-
 entry.target.classList.add("show")
-
 }
 
 })
@@ -654,22 +519,7 @@ entry.target.classList.add("show")
 
 document.querySelectorAll(".hidden").forEach(el=>observer.observe(el))
 
-/* FIREWORKS ON FOOTER */
-
-document.querySelector("footer").addEventListener("mouseenter",()=>{
-
-confetti({
-
-particleCount:120,
-
-spread:100
-
-})
-
-})
-
 </script>
 
 </body>
-
 </html>
