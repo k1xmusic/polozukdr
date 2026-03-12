@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 
 <meta charset="UTF-8">
@@ -29,172 +30,273 @@ overflow-x:hidden;
 /* HERO */
 
 .hero{
+
 height:100vh;
+
 display:flex;
 flex-direction:column;
+
 align-items:center;
 justify-content:center;
+
 text-align:center;
-padding:20px;
 
 background-image:url("background.jpg");
-background-repeat:no-repeat;
-background-position:center 30%;
+
 background-size:cover;
 
+background-position:center;
+
+background-attachment:fixed;
+
 position:relative;
+
+padding:20px;
+
 }
 
 .hero::after{
+
 content:"";
+
 position:absolute;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:linear-gradient(
+
 to bottom,
+
 rgba(0,0,0,0.4),
-rgba(0,0,0,0.85)
+
+rgba(0,0,0,0.9)
+
 );
+
 }
 
 .hero-content{
+
 position:relative;
+
 z-index:2;
+
 animation:fadeUp 1.5s ease;
+
 }
 
 h1{
-font-size:50px;
+
+font-size:52px;
+
 margin-bottom:10px;
+
 }
 
 .subtitle{
+
 font-size:20px;
+
 opacity:0.9;
+
 }
 
 /* TIMER */
 
 .timer{
+
 margin-top:30px;
+
 display:flex;
+
 gap:20px;
+
 justify-content:center;
+
 flex-wrap:wrap;
+
 }
 
 .time-box{
-background:rgba(255,255,255,0.1);
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(10px);
+
+border-radius:30px;
+
 padding:15px 20px;
-border-radius:10px;
-backdrop-filter:blur(5px);
+
+border:1px solid rgba(255,255,255,0.2);
+
 }
 
 .time-box span{
+
 display:block;
+
 font-size:28px;
+
 font-weight:700;
+
 }
 
-/* INFO */
+/* SECTIONS */
 
-.info{
-padding:70px 20px;
-background:white;
-color:black;
+.section{
+
+padding:90px 20px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+/* GLASS CARD */
+
+.glass{
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+
+border-radius:40px;
+
+padding:40px;
+
+max-width:650px;
+
 text-align:center;
+
+border:1px solid rgba(255,255,255,0.15);
+
+box-shadow:0 20px 50px rgba(0,0,0,0.5);
+
 }
 
-.info h2{
-font-size:32px;
-margin-bottom:20px;
-}
-
-.info p{
-font-size:18px;
-margin:10px 0;
-}
-
-/* ROUTE BUTTON */
+/* BUTTON */
 
 .route-btn{
 
 display:inline-block;
-margin-top:20px;
-padding:14px 26px;
+
+margin-top:25px;
+
+padding:14px 28px;
+
 border-radius:30px;
 
-background:black;
-color:white;
+background:white;
+
+color:black;
 
 text-decoration:none;
 
+font-weight:500;
+
 transition:0.3s;
+
 }
 
 .route-btn:hover{
-transform:scale(1.05);
+
+transform:scale(1.07);
+
 }
 
 /* FAQ */
 
-.faq{
-padding:70px 20px;
-background:#f4f4f4;
-color:black;
-}
-
-.faq h2{
-text-align:center;
-font-size:32px;
-margin-bottom:40px;
-}
-
-.faq-container{
-max-width:800px;
-margin:auto;
-}
-
 .faq-item{
-background:white;
-margin-bottom:15px;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+
+border-radius:35px;
+
+padding:20px;
+
+margin-top:15px;
+
 cursor:pointer;
-transition:0.25s;
+
+border:1px solid rgba(255,255,255,0.15);
+
+transition:0.3s;
+
 }
 
 .faq-item:hover{
-transform:scale(1.02);
-}
 
-.question{
-padding:20px;
-font-weight:500;
+transform:scale(1.02);
+
 }
 
 .answer{
+
 max-height:0;
+
 overflow:hidden;
-padding:0 20px;
+
 transition:max-height 0.4s ease;
+
 }
 
 .answer p{
-padding-bottom:20px;
+
+margin-top:10px;
+
 }
 
-/* FOOTER */
+/* STARS */
 
-footer{
-background:black;
-padding:40px;
-text-align:center;
-font-size:14px;
-opacity:0.7;
+.stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.star{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 3s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{opacity:0.2}
+
+50%{opacity:1}
+
+100%{opacity:0.2}
+
 }
 
 /* ANIMATIONS */
@@ -202,28 +304,55 @@ opacity:0.7;
 @keyframes fadeUp{
 
 from{
+
 opacity:0;
+
 transform:translateY(40px);
+
 }
 
 to{
+
 opacity:1;
+
 transform:translateY(0);
-}
 
 }
 
-/* SCROLL ANIMATION */
+}
+
+/* SCROLL */
 
 .hidden{
+
 opacity:0;
+
 transform:translateY(40px);
+
 transition:1s;
+
 }
 
 .show{
+
 opacity:1;
+
 transform:translateY(0);
+
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:60px 20px;
+
+font-size:14px;
+
+opacity:0.7;
+
 }
 
 /* MOBILE */
@@ -231,27 +360,38 @@ transform:translateY(0);
 @media(max-width:700px){
 
 h1{
+
 font-size:34px;
+
 }
 
 .subtitle{
+
 font-size:16px;
+
 }
 
 .timer{
+
 gap:10px;
+
 }
 
-.time-box{
-padding:10px 15px;
+.glass{
+
+padding:30px;
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
+
+<div class="stars" id="stars"></div>
 
 <section class="hero">
 
@@ -260,29 +400,43 @@ padding:10px 15px;
 <h1>День рождения Дмитрия Полозюка</h1>
 
 <p class="subtitle">
+
 14 марта • начало в 16:00
+
 </p>
 
 <div class="timer">
 
 <div class="time-box">
+
 <span id="days">0</span>
+
 дней
+
 </div>
 
 <div class="time-box">
+
 <span id="hours">0</span>
+
 часов
+
 </div>
 
 <div class="time-box">
+
 <span id="minutes">0</span>
+
 мин
+
 </div>
 
 <div class="time-box">
+
 <span id="seconds">0</span>
+
 сек
+
 </div>
 
 </div>
@@ -291,64 +445,100 @@ padding:10px 15px;
 
 </section>
 
-<section class="info hidden">
+<section class="section hidden">
+
+<div class="glass">
 
 <h2>Место и время</h2>
 
 <p><b>Дата:</b> 14.03.2026</p>
+
 <p><b>Время:</b> 16:00</p>
+
 <p><b>Место:</b> СНТ Янтарь, ул. Сливовая 568</p>
 
 <a class="route-btn"
+
 href="https://yandex.ru/maps/?text=СНТ Янтарь Сливовая 568"
+
 target="_blank">
 
 Построить маршрут
 
 </a>
 
+</div>
+
 </section>
 
-<section class="faq hidden">
+<section class="section hidden">
+
+<div class="glass">
 
 <h2>Частые вопросы</h2>
 
-<div class="faq-container">
-
 <div class="faq-item">
+
 <div class="question">Дресс-код</div>
+
 <div class="answer">
+
 <p>
-Черно-белая одежда (не обязательно деловой стиль — на ваш выбор).
+
+Черно-белая одежда (не обязательно деловой стиль — на ваш выбор)
+
 </p>
+
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <div class="question">Купальники</div>
+
 <div class="answer">
+
 <p>
-Можно любой цвет.
+
+Можно любой цвет
+
 </p>
+
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <div class="question">Можно ли остаться с ночёвкой?</div>
+
 <div class="answer">
+
 <p>
-Да, конечно.
+
+Да
+
 </p>
+
 </div>
+
 </div>
 
 <div class="faq-item">
+
 <div class="question">Брать тапочки и полотенце?</div>
+
 <div class="answer">
+
 <p>
-Да, лучше взять.
+
+Да
+
 </p>
+
 </div>
+
 </div>
 
 </div>
@@ -363,23 +553,62 @@ target="_blank">
 
 <script>
 
+/* CONFETTI */
+
+window.onload=()=>{
+
+confetti({
+
+particleCount:200,
+
+spread:120,
+
+origin:{y:0.6}
+
+})
+
+}
+
+/* TIMER */
+
+const target=new Date("March 14, 2026 16:00:00").getTime()
+
+setInterval(()=>{
+
+const now=new Date().getTime()
+
+const dist=target-now
+
+const d=Math.floor(dist/(1000*60*60*24))
+
+const h=Math.floor((dist%(1000*60*60*24))/(1000*60*60))
+
+const m=Math.floor((dist%(1000*60*60))/(1000*60))
+
+const s=Math.floor((dist%(1000*60))/1000)
+
+days.innerHTML=d
+hours.innerHTML=h
+minutes.innerHTML=m
+seconds.innerHTML=s
+
+},1000)
+
 /* FAQ */
 
-const faq=document.querySelectorAll(".faq-item")
-
-faq.forEach(item=>{
+document.querySelectorAll(".faq-item").forEach(item=>{
 
 item.addEventListener("click",()=>{
 
-const answer=item.querySelector(".answer")
+const ans=item.querySelector(".answer")
 
-if(answer.style.maxHeight){
+if(ans.style.maxHeight){
 
-answer.style.maxHeight=null
+ans.style.maxHeight=null
 
 }else{
 
-answer.style.maxHeight=answer.scrollHeight+"px"
+ans.style.maxHeight=ans.scrollHeight+"px"
 
 }
 
@@ -387,37 +616,23 @@ answer.style.maxHeight=answer.scrollHeight+"px"
 
 })
 
-/* TIMER */
+/* STARS */
 
-const targetDate=new Date("March 14, 2026 16:00:00").getTime()
+const stars=document.getElementById("stars")
 
-setInterval(()=>{
+for(let i=0;i<60;i++){
 
-const now=new Date().getTime()
+let star=document.createElement("div")
 
-const distance=targetDate-now
+star.classList.add("star")
 
-const days=Math.floor(distance/(1000*60*60*24))
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-const minutes=Math.floor((distance%(1000*60*60))/(1000*60))
-const seconds=Math.floor((distance%(1000*60))/1000)
+star.style.top=Math.random()*100+"%"
 
-document.getElementById("days").innerHTML=days
-document.getElementById("hours").innerHTML=hours
-document.getElementById("minutes").innerHTML=minutes
-document.getElementById("seconds").innerHTML=seconds
+star.style.left=Math.random()*100+"%"
 
-},1000)
+star.style.animationDuration=(Math.random()*3+2)+"s"
 
-/* CONFETTI */
-
-window.onload=()=>{
-
-confetti({
-particleCount:200,
-spread:120,
-origin:{y:0.6}
-})
+stars.appendChild(star)
 
 }
 
@@ -439,7 +654,22 @@ entry.target.classList.add("show")
 
 document.querySelectorAll(".hidden").forEach(el=>observer.observe(el))
 
+/* FIREWORKS ON FOOTER */
+
+document.querySelector("footer").addEventListener("mouseenter",()=>{
+
+confetti({
+
+particleCount:120,
+
+spread:100
+
+})
+
+})
+
 </script>
 
 </body>
+
 </html>
