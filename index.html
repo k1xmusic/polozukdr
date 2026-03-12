@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>День рождения Дмитрия Полозюка</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+color:white;
+background:black;
+overflow-x:hidden;
+}
+
+/* ФОН */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+
+background-image: url("background.jpg"); /* <-- СЮДА ПОТОМ СВОЁ ФОТО */
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+animation:fadeUp 1.5s ease;
+}
+
+h1{
+font-size:52px;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.subtitle{
+font-size:20px;
+opacity:0.9;
+}
+
+/* ИНФО */
+
+.info{
+padding:60px 20px;
+text-align:center;
+background:white;
+color:black;
+}
+
+.info h2{
+margin-bottom:20px;
+font-size:32px;
+}
+
+.info p{
+font-size:18px;
+margin:8px 0;
+}
+
+/* FAQ */
+
+.faq{
+padding:60px 20px;
+background:#f5f5f5;
+color:black;
+}
+
+.faq h2{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+background:white;
+margin-bottom:15px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.faq-item:hover{
+transform:scale(1.02);
+}
+
+.question{
+padding:20px;
+font-weight:500;
+}
+
+.answer{
+max-height:0;
+overflow:hidden;
+padding:0 20px;
+transition:max-height .4s ease;
+}
+
+.answer p{
+padding-bottom:20px;
+}
+
+/* ФУТЕР */
+
+footer{
+text-align:center;
+padding:30px;
+background:black;
+font-size:14px;
+opacity:0.7;
+}
+
+/* АНИМАЦИИ */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* АДАПТИВ */
+
+@media (max-width:600px){
+
+h1{
+font-size:36px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<h1>День рождения Дмитрия Полозюка</h1>
+<p class="subtitle">14 марта • начало в 16:00</p>
+</div>
+</section>
+
+<section class="info">
+
+<h2>Место и время</h2>
+
+<p><b>Дата:</b> 14.03.2026</p>
+<p><b>Время:</b> 16:00</p>
+<p><b>Место:</b> СНТ Янтарь, ул. Сливовая 568</p>
+
+</section>
+
+<section class="faq">
+
+<h2>Частые вопросы</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<div class="question">Дресс-код</div>
+<div class="answer">
+<p>Черно-белая одежда (не обязательно деловой стиль — на ваш выбор).</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question">Купальники</div>
+<div class="answer">
+<p>Можно любой цвет.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question">Можно ли остаться с ночёвкой?</div>
+<div class="answer">
+<p>Да, конечно.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question">Брать тапочки и полотенце?</div>
+<div class="answer">
+<p>Да, лучше взять.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Ждём тебя на празднике 🎉
+</footer>
+
+<script>
+
+const faqItems=document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+item.addEventListener("click",()=>{
+
+const answer=item.querySelector(".answer");
+
+if(answer.style.maxHeight){
+answer.style.maxHeight=null;
+}
+else{
+answer.style.maxHeight=answer.scrollHeight+"px";
+}
+
+});
+});
+
+</script>
+
+</body>
+</html>
